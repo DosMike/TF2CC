@@ -1,0 +1,35 @@
+
+log:
+  level: DEBUG
+  filePath: /etc/traefik/traefik.log
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    watch: true
+    useBindPortIP: false
+    exposedByDefault: false
+    httpClientTimeout: 30
+
+entryPoints:
+  apache_ep:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure_ep
+  websocket_ep:
+    address: ":8088"
+  websecure_ep:
+    address: ":443"
+
+
+certificatesResolvers:
+  main_cert_resolver:
+    acme:
+      email: email@example.com
+      storage: /etc/traefik/acme/acme.json
+      httpChallenge:
+        # used during the challenge
+        entryPoint: apache_ep
+      caServer: 'https://acme-v02.api.letsencrypt.org/directory'

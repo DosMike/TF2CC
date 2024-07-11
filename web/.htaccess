@@ -1,0 +1,23 @@
+### Nice enpoint paths can be implemented on PHP side if we redirect missing files to index.html
+DirectoryIndex index.php
+
+# mod_rewrite
+RewriteEngine On
+
+# rewrite non-files and non-directories to index.php in the local (where this .htaccess is) directory
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+
+### This htaccess file is set up to pass the Authorization header to PHP, because for some reason it is not
+
+# if you have a CGI gateway use this
+CGIPassAuth on
+
+# otherwise you can still try this
+# RewriteEngine on
+# RewriteCond %{HTTP:Authorization} ^(.*)
+# RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+# or search for solutions yourself ¯\_(ツ)_/¯

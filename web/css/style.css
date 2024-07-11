@@ -1,0 +1,558 @@
+/*=== Basic elements ===*/
+
+*:not(input, button, select, ul, li, p) {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+p {
+    margin-bottom: .8em;
+}
+
+body {
+    background: #a79f97;
+    font-family: Arial;
+}
+
+a {
+    cursor: pointer;
+}
+
+a,
+a:link,
+a:visited {
+    color: #0064ff;
+}
+
+a:hover,
+a:active {
+    color: #0072a0;
+}
+
+input[type=text] {
+    border: thin solid gray;
+    background: #ffffff;
+    border-radius: .3rem;
+    line-height: 1.5rem;
+    height: 1.2rem;
+}
+
+/*=== Design ===*/
+
+@font-face {
+    font-family: TF2Build;
+    src: url(../assets/tf2build.ttf);
+}
+
+button,
+input[type=submit] {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    vertical-align: middle;
+    border: 1px solid;
+    border-radius: 6px;
+    color: #24292e;
+    background-color: #fafbfc;
+    border-color: #1b1f2326;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    transition-property: color, background-color, border-color;
+}
+
+button.in:not([disabled]),
+input[type=submit].in:not([disabled]) {
+    background-color: #e0e1e2;
+}
+
+button:not([disabled]):hover,
+input[type=submit]:not([disabled]):hover {
+    background-color: #f3f4f6;
+    border-color: #1b1f2326;
+    transition-duration: 0.1s;
+}
+
+button[disabled],
+input[type=submit][disbaled] {
+    color: #484848;
+    background-color: #d4d5d6;
+    box-shadow: none;
+}
+
+button.critical {
+    color: #ffffff;
+    background-color: #c81616;
+}
+button.critical:not([disabled]):hover {
+    background-color: #e01616;
+}
+button.info {
+    color: #ffffff;
+    background-color: #1672c8;
+}
+button.info:not([disabled]):hover {
+    background-color: #16a0e0;
+}
+button.confirm {
+    color: #ffffff;
+    background-color: #32c832;
+}
+button.confirm:not([disabled]):hover {
+    background-color: #32e032;
+}
+
+main :not(input,code), header :not(input), footer, .queueoverlay {
+    user-select: none;
+}
+code {
+    cursor: text;
+    user-select: text;
+}
+pre {
+    margin: 1em 1em 1em 2em;
+}
+
+/*=== Content ===*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #cf7336;
+    box-shadow: 0px 0px 5px 0px #00000096;
+    line-height: 3rem;
+    font-size: 1.5em;
+    color: #ffeeee;
+}
+
+header a:link,
+header a:visited,
+header a:hover,
+header a:active {
+    text-decoration: none;
+    color: #ffeeee;
+}
+
+header h1 {
+    font-size: 2rem;
+    display: inline;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    height: 4.75rem;
+    max-height: 4.75rem;
+    z-index: 10;
+}
+
+header span.right {
+    margin-right: 1rem;
+    flex-grow: 0;
+    align-content: center;
+}
+header span.right .user {
+    line-height: 1rem;
+    align-self: center;
+    text-align: right;
+}
+header span.right .user span {
+    font-size:.66em;
+}
+header span.right a {
+    display: flex;
+    height: 3.3rem;
+}
+header span.right a img {
+    height: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+header span.right .avatar {
+    height: 3rem;
+    display: inline;
+    border-radius: 5px;
+    margin-left: .5rem;
+    transform: rotate(-3deg);
+    box-shadow: 2px 2px 5px -1px #0006;
+}
+header span.right:hover .avatar {
+    height: 3rem;
+    display: inline;
+    border-radius: 5px;
+    margin-left: .5rem;
+    transform: rotate(1deg);
+    box-shadow: 2px 2px 5px -1px #000c;
+}
+
+header span.left {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+header span.top {
+    margin: .25rem 0 0 .5rem;
+    height: 3rem;
+}
+header span.bot {
+    height: 1.5rem;
+}
+
+header span.bot ul {
+    list-style-type: none;
+    line-height: 1em;
+    font-size: .8em;
+    margin: 0 .5em;
+    padding: 0;
+}
+header span.bot ul li {
+    margin: 0 .05em;
+    display: inline-block;
+}
+header span.bot ul li a {
+    padding: 0.15rem 0.3em;
+}
+header span.bot ul li a.here {
+    background: linear-gradient(180deg, #00000028 0, #00000010 100%);
+}
+header span.bot ul li a:hover {
+    background: #00000032;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: #ffffffc8;
+    padding: .2em .5em;
+    z-index: 10;
+}
+
+main {
+    max-width: 1024px;
+    width: 100%;
+    margin: auto;
+    margin-top: 4.75rem;
+    margin-bottom: 10vh;
+    background: #d2cdc8;
+    box-shadow: 0px 0px 5px 0px #c8c8c8;
+    min-height: 80vh;
+    padding: .5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: .1em .25em;
+}
+h1 {
+    font-family: TF2Build;
+}
+main > p {
+    padding: 0 0 0 .8em;
+}
+
+.userCard {
+    display: inline-flex;
+    align-items: center;
+    background: #e0e0f0;
+    border: thin solid gray;
+    position: relative;
+    padding: .5rem;
+}
+
+.userCard img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 5%;
+    margin-right: .5rem;
+}
+
+main button#invite {
+    margin-left: 1em;
+}
+
+main .lobby {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+main .lobby img {
+    display: block;
+    width: 3.5em;
+    background: #444;
+}
+main .lobby > div {
+    margin: .2em;
+    transition: .1s all ease-in-out;
+    position: relative;
+}
+main .lobby > div:not(.joined,.ready), main .lobby > div.afk {
+    border: 2px solid #888;
+}
+main .lobby > div.joined:not(.ready,.afk) {
+    border: 2px solid #2af;
+}
+main .lobby > div.ready {
+    border: 2px solid #2c4;
+    box-shadow: 1px 2px 3px #0006;
+}
+main .lobby > div.afk, main .lobby > div.joined, main .lobby > div.ready {
+    cursor: not-allowed;
+}
+main .lobby > div:nth-child(1).ready {
+    transform: translate(-1px, -2px) rotate(-4deg);
+}
+main .lobby > div:nth-child(2).ready {
+    transform: translate(-1px, -2px) rotate(2deg);
+}
+main .lobby > div:nth-child(3).ready {
+    transform: translate(-1px, -2px) rotate(-3deg);
+}
+main .lobby > div:nth-child(4).ready {
+    transform: translate(-1px, -2px) rotate(5deg);
+}
+main .lobby > div:nth-child(5).ready {
+    transform: translate(-1px, -2px) rotate(3deg);
+}
+main .lobby > div:nth-child(6).ready {
+    transform: translate(-1px, -2px) rotate(-2deg);
+}
+main .lobby > div.ready img {
+    filter: grayscale(1) brightness(0.6);
+}
+main .lobby > div.ready::after {
+    content: '✓';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #2c4;
+    font-size: 3em;
+    text-align: center;
+}
+main .lobby > div.afk img {
+    filter: grayscale(1) brightness(0.6) blur(1px);
+}
+main .lobby > div.afk::after {
+    content: 'zzz';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #ccc;
+    font-size: 2em;
+    line-height: 4rem;
+    text-align: center;
+    font-family: TF2Build;
+    transform: perspective(60px) rotateY(-40deg) translateX(-4px);
+}
+
+main .lobbyctrl {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 1em 0;
+}
+main button#ready {
+    background: linear-gradient(0deg, #080 0, #6e0 100%);
+    font-size: 1.5em;
+    font-family: TF2Build;
+    padding: 0.25em 1em;
+    line-height: 1.5em;
+    box-shadow: 0px 2px 5px #0004;
+    transition: all .05s ease-in-out;
+}
+main button#ready:hover {
+    background: linear-gradient(0deg, #0a0 0, #8f0 100%);
+    box-shadow: 0px 2px 5px #0008;
+    transition-duration: .05s;
+}
+main button#ready.in {
+    background: linear-gradient(180deg, #080 0, #6e0 100%);
+    box-shadow: 0px 2px 5px #0008;
+    transform: translate(-4px, -3px) rotate(3deg);
+}
+
+main .mapchoice, main .regions {
+    position: relative;
+    list-style-type: none;
+    display: grid;
+    gap: .5em 1em;
+    margin-bottom: 1.5em;
+    padding: 0;
+}
+main .mapchoice {
+    grid-template-columns: repeat(3, 1fr);
+}
+main .regions {
+    grid-template-columns: repeat(4, 1fr);
+}
+main .mapchoice label, main .regions label {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding: .2em .5em;
+    align-content: end;
+    color: #fff;
+    text-shadow: 0px 0px 2px #000, 0px 0px 2px #000, 0px 0px 3px #000;
+    background-size: cover;
+    background-position: center;
+    transition: all .2s ease-in-out;
+}
+main .mapchoice label {
+    height: 4em;
+}
+main .regions label {
+    height: 2.5em;
+}
+main .mapchoice label .servercount, main .regions label .servercount {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: right;
+    /* dynamic: background: linear-gradient(270deg, hsl(120, 60%, 33.33%) 0, hsl(120, 85%, 66.66%) 50%, #0000 1%); */
+    font-size: .6rem;
+    padding-right: .5em;
+}
+main .mapchoice.fold label {
+    height: 2.5em;
+}
+main .mapchoice label:hover::after, main .regions label:hover::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(15deg, #0003 0, #0000 50%);
+}
+main .mapchoice label:not(:has(:checked), :hover), main .regions label:not(:has(:checked), :hover) {
+    filter: saturate(0);
+}
+main .mapchoice label > *, main .regions label > * {
+    position: relative;
+    z-index: 1;
+}
+main .serverlisting {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    grid-gap: .5em 1em;
+}
+main .serverlisting li {
+    height: 4.5em;
+    overflow: hidden;
+    font-size: .8em;
+}
+main .serverlisting li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 0 .33em;
+    position: relative;
+}
+main .serverlisting li a:link, .serverlisting li a:visited, .serverlisting li a:hover, .serverlisting li a:active {
+    color: white;
+    text-decoration: none;
+    text-decoration: none;
+    text-shadow: 0px 0px 2px #000, 0px 0px 2px #000, 0px 0px 2px #000;
+}
+main .serverlisting li a:hover::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(170deg,#0006,#0000 50%);
+}
+main .serverlisting li a > * {
+    z-index: 1;
+    position: relative;
+}
+
+@keyframes shake {
+	0% { transform: translate(0); }
+	10% { transform: translate(-2px, -2px); }
+	20% { transform: translate(2px, -2px); }
+	30% { transform: translate(-2px, 2px); }
+	40% { transform: translate(2px, 2px); }
+	50% { transform: translate(-2px, -2px); }
+	60% { transform: translate(2px, -2px); }
+	70% { transform: translate(-2px, 2px); }
+	80% { transform: translate(-2px, -2px); }
+	90% { transform: translate(2px, -2px); }
+	100% { transform: translate(0); }
+}
+@keyframes speen {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+@keyframes swoosh {
+	0% { height: 0px; }
+	100% { height: 20em; }
+}
+.queueoverlay {
+    display: none;
+    position: fixed;
+    height: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, #000 0, #000a 80%, #0000 100%);
+    z-index: 1;
+    transition: all .2s ease-in-out;
+}
+.queueoverlay.show {
+    display: flex;
+    animation: swoosh .1s linear 0s 1 normal forwards;
+    flex-direction: column;
+    align-items: center;
+}
+.queueoverlay .spinner {
+    margin-top: 3em;
+    width: 10em;
+    height: 10em;
+    border-radius: 100%;
+    border: thin solid gray;
+    background: #333;
+}
+.queueoverlay.show .spinner {
+    animation: shake .5s linear 0s 1 normal forwards;
+}
+.queueoverlay .spinner div {
+    animation: speen 5s linear 0s infinite reverse forwards;
+    background: url(../assets/spinner.png) center;
+    background-size: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.queueoverlay h1 {
+    color: #fff;
+    margin-top: .5em;
+}

@@ -1,0 +1,75 @@
+services:
+
+  php:
+    build: './php/'
+    restart: unless-stopped
+    env_file:
+      - mysql.env
+      - steam.env
+    volumes:
+      - ./web/:/var/www/html/
+
+  apache:
+    build: './apache/'
+    restart: unless-stopped
+    depends_on:
+      - traefik
+      - php
+    volumes:
+      - ./web/:/var/www/html/
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.apache.rule=Host(`tf2casual.community`)'
+      - 'traefik.http.routers.apache.service=apache'
+      - 'traefik.http.routers.apache.entrypoints=websecure_ep'
+      - 'traefik.http.services.apache.loadbalancer.server.port=80'
+      - 'traefik.http.routers.apache.tls=true'
+      - 'traefik.http.routers.apache.tls.certresolver=main_cert_resolver'
+
+  db:
+    image: mariadb:10.11
+    restart: always
+    env_file: mysql.env
+    volumes:
+      - mariadb:/var/lib/mysql
+
+  matchmaker:
+    build: matchmaker
+    depends_on:
+      - traefik
+      - db
+    restart: unless-stopped
+    expose: [8088]
+    env_file: mysql.env
+    volumes:
+      - ./log/:/tmp/log/
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.matchmaker.rule=Host(`tf2casual.community`)'
+      - 'traefik.http.routers.matchmaker.service=matchmaker'
+      - 'traefik.http.routers.matchmaker.entrypoints=websocket_ep'
+      - 'traefik.http.services.matchmaker.loadbalancer.server.port=8088'
+      - 'traefik.http.routers.matchmaker.tls=true'
+      - 'traefik.http.routers.matchmaker.tls.certresolver=main_cert_resolver'
+
+  minify:
+    build: web
+    restart: "no"
+    volumes:
+      - ./web/:/var/www/html/
+
+  traefik:
+    image: traefik:v3.0
+    # command: --api.insecure=true --providers.docker
+    ports:
+      - "80:80"
+      # - "8080:8080"
+      - "8088:8088"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml
+      - ./traefik:/etc/traefik
+
+volumes:
+  mariadb:

@@ -1,0 +1,164 @@
+<mxfile host="Electron" modified="2024-06-12T17:27:52.834Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.8 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="8RCG0JRBkzm-yJrVnLnk" version="24.3.1" type="device">
+  <diagram name="Page-1" id="XEEJzK-GtTdzaQrjKNZL">
+    <mxGraphModel dx="1204" dy="906" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-23" value="Website" style="group;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;container=0;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="40" y="120" width="250" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-1" value="Game Master Instance" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="350" y="120" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-55" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="170" y="140" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-18" value="SQL Database" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;" parent="48DB7phEKJ-3I7bHGUlu-55" vertex="1">
+          <mxGeometry width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-19" value="SourceBans" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#666666;" parent="48DB7phEKJ-3I7bHGUlu-55" vertex="1">
+          <mxGeometry x="10" y="31.67" width="80" height="16.666666666666668" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-20" value="Servers" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="48DB7phEKJ-3I7bHGUlu-55" vertex="1">
+          <mxGeometry x="10" y="65.00333333333333" width="80" height="16.666666666666668" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-54" value="Session" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="48DB7phEKJ-3I7bHGUlu-55" vertex="1">
+          <mxGeometry x="10" y="48.33666666666667" width="80" height="16.666666666666668" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-8" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="630" y="120" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;" parent="48DB7phEKJ-3I7bHGUlu-8" vertex="1">
+          <mxGeometry x="20" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;" parent="48DB7phEKJ-3I7bHGUlu-8" vertex="1">
+          <mxGeometry x="10" y="10" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-6" value="Networks / Clusters" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;" parent="48DB7phEKJ-3I7bHGUlu-8" vertex="1">
+          <mxGeometry y="20" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-17" value="" style="group" parent="48DB7phEKJ-3I7bHGUlu-8" vertex="1" connectable="0">
+          <mxGeometry x="40" y="50" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="48DB7phEKJ-3I7bHGUlu-17" vertex="1">
+          <mxGeometry x="20" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-15" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="48DB7phEKJ-3I7bHGUlu-17" vertex="1">
+          <mxGeometry x="10" y="10" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-16" value="Game Server Instance" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="48DB7phEKJ-3I7bHGUlu-17" vertex="1">
+          <mxGeometry y="20" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-39" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;endArrow=classic;endFill=1;startArrow=classic;startFill=1;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;" parent="1" source="48DB7phEKJ-3I7bHGUlu-34" target="48DB7phEKJ-3I7bHGUlu-16" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="170" />
+              <mxPoint x="600" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-41" value="RCon + TCP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=none;rotation=0;" parent="48DB7phEKJ-3I7bHGUlu-39" vertex="1" connectable="0">
+          <mxGeometry x="-0.23" relative="1" as="geometry">
+            <mxPoint x="20" y="45" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-42" value="WebSocket" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;startArrow=classic;startFill=1;labelBackgroundColor=none;" parent="1" source="48DB7phEKJ-3I7bHGUlu-27" target="48DB7phEKJ-3I7bHGUlu-33" edge="1">
+          <mxGeometry x="0.0769" y="-10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="230" />
+              <mxPoint x="160" y="250" />
+              <mxPoint x="330" y="250" />
+              <mxPoint x="330" y="180" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-46" value="&lt;span style=&quot;&quot;&gt;The client communicates with the game coordinator through a persistent WebSocket connection. To avoid foreign SteamID spoofing, the sign in is handed off to the game coordinator via the Web session though the MySQL database.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;The website displays the lobby state including players and queue position, can configure maps and connects the clients to the game servers.&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="320" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-48" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;The lobby will be used to configure the desired gamemode. Once the lobby is ready, the match maker will try to assign the lobby to a game server in progress or empty. Server information about the ongoing game is sent back to the lobbies.&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="340" y="320" width="210" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-49" value="Server instances run a plugin that can be notified via RCon when a new game is supposed to start, or a lobby shall be added to the game. The game coordinator is updated about map changes or abandoned games via TCP notifications. While the server is in hibernation, it locks via password, otherwise uses a RCon retrieved whitelist." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="570" y="320" width="270" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-51" value="For the future, the SQL Database could server as global store for player bans. Bans can only be handed out and manages though trusted individuals. In this design, the moderation staff of network clusters could be permitted, given the networks are trusted as a whole (e.g. established server providers)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="440" width="820" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-53" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#666666;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="48DB7phEKJ-3I7bHGUlu-3" target="48DB7phEKJ-3I7bHGUlu-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="730" y="110" />
+              <mxPoint x="310" y="110" />
+              <mxPoint x="310" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-57" value="Trusted moderation" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#666666;labelBackgroundColor=none;" parent="48DB7phEKJ-3I7bHGUlu-53" vertex="1" connectable="0">
+          <mxGeometry x="0.1083" relative="1" as="geometry">
+            <mxPoint x="245" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#666666;endArrow=classic;endFill=1;" parent="1" source="48DB7phEKJ-3I7bHGUlu-52" target="48DB7phEKJ-3I7bHGUlu-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="170" />
+              <mxPoint x="150" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-44" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="48DB7phEKJ-3I7bHGUlu-33" target="48DB7phEKJ-3I7bHGUlu-54" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="160" />
+              <mxPoint x="320" y="197" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-59" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeColor=#666666;endArrow=none;endFill=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="48DB7phEKJ-3I7bHGUlu-27" target="48DB7phEKJ-3I7bHGUlu-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="210" />
+              <mxPoint x="150" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-31" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=classic;endFill=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="48DB7phEKJ-3I7bHGUlu-27" target="48DB7phEKJ-3I7bHGUlu-54" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="170" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="150" y="210" />
+              <mxPoint x="150" y="197" />
+              <mxPoint x="180" y="197" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-27" value="Lobby" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="55" y="200" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-52" value="SourceBans" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="55" y="150" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0AH6mWWCJDnjCF-zTLj0-1" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="370" y="150" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;flowAnimation=1;" parent="0AH6mWWCJDnjCF-zTLj0-1" source="48DB7phEKJ-3I7bHGUlu-33" target="48DB7phEKJ-3I7bHGUlu-35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-33" value="Lobby Management" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="0AH6mWWCJDnjCF-zTLj0-1" vertex="1">
+          <mxGeometry width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-34" value="Game Server Management" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="0AH6mWWCJDnjCF-zTLj0-1" vertex="1">
+          <mxGeometry x="100" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;flowAnimation=1;" parent="0AH6mWWCJDnjCF-zTLj0-1" source="48DB7phEKJ-3I7bHGUlu-35" target="48DB7phEKJ-3I7bHGUlu-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48DB7phEKJ-3I7bHGUlu-35" value="Match Making" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="0AH6mWWCJDnjCF-zTLj0-1" vertex="1">
+          <mxGeometry x="50" y="50" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

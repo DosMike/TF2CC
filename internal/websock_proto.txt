@@ -1,0 +1,43 @@
+Messages:
+
+RX (to Client)
+    JOIN <acc>
+        An account has joined the lobby
+    LEAVE <acc>
+        An account has left the lobby
+    CLOSE
+        The lobby has closed
+    LIST <code> <owner> <members>...
+        Listing the lobby with invite code <code>. <owner> has permission to configure
+    AFK <acc>
+        Account has temporarily disconnected (They shall JOIN <acc> again after reconnect)
+    READY <acc> <1/0>
+        Account has toggled ready
+    CONFIG + <value>...
+        One or more maps or regions were added
+    CONFIG - <value>...
+        One or more maps or regions were removed
+    CONFIG = <value>...
+        Sync configurtaion to the specified maps and regions
+    ERROR <msg>
+        Show an error message that is not terminal
+    CONNECT <ip>:<port>
+        Queue time is over, connect! :D
+    SYSNOTIF <msg>
+        Displays a system message
+
+TX (to Coordinator)
+    HELO <session>
+        Handshake to connect your web session with the coordinator. Reply is a LIST
+    JOIN <code>
+        Join a different lobby. Reply is a LIST
+    LEAVE
+        Leave the lobby and make a new one. Reply is a LIST
+    READY <1/0>
+        Toggle your ready state
+    CONFIG + <value>...
+        Add one or more maps or regions to the filters. Reply is a config +
+    CONFIG - <value>...
+        Remove one or more maps or regions to the filters. Reply is a CONFIG -
+    CONFIG SYNC
+        Request a full config sync. Reply is a CONFIG =
