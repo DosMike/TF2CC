@@ -44,6 +44,8 @@ public class QueueManager {
     private static double serverMatchWeight(Server server, Lobby lobby) {
         // map is not picked
         if (!lobby.getMaps().contains(server.getMap())) return 0.0;
+        // region is not picked
+        if (!lobby.getRegions().contains(server.getRegion())) return 0.0;
 
         // try to fill an existing server first, otherwise an empty server is fine
         if (server.getPlayers() == 0) return 1e-3;
