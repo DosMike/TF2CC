@@ -410,7 +410,7 @@ main .mapchoice label, main .regions label {
     align-content: end;
     color: #fff;
     text-shadow: 0px 0px 2px #000, 0px 0px 2px #000, 0px 0px 3px #000;
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center;
     transition: all .2s ease-in-out;
 }
@@ -442,6 +442,9 @@ main .mapchoice label:hover::after, main .regions label:hover::after {
     right: 0;
     bottom: 0;
     background: linear-gradient(15deg, #0003 0, #0000 50%);
+}
+main .mapchoice label:hover, main .regions label:hover {
+    background-size: 105% auto;
 }
 main .mapchoice label:not(:has(:checked), :hover), main .regions label:not(:has(:checked), :hover) {
     filter: saturate(0);

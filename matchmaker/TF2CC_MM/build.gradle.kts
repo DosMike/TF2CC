@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.dosmike"
-version = "24w28a"
+version = "24w31a"
 
 repositories {
     mavenCentral()

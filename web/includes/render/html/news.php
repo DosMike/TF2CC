@@ -6,6 +6,16 @@ function htmlRender($data) {
     echo $parsedown->text(<<<NEWS_END
 # News
 
+## 24w31a
+
+Finally, more than a week delayed, the summer update has also arrived on this website :D
+
+Sorry for the delay, but I had a planned vacation to Ireland and of course Valve decided to push the update *just* the night before I left.
+
+Anyways - New maps are indexed and I made the map lists in the background a bit more maintainable (hopefully).
+
+~ UwU
+
 ## 24w28a
 
 Fixed some minor issues, where you would always get cueued into an arbitrary first server, not it picks a random best. Also added a feature to

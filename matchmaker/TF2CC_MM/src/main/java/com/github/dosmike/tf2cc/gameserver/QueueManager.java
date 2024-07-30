@@ -53,10 +53,15 @@ public class QueueManager {
         int cap = server.getMaxplayers() - server.getPlayers() - 1; //subtract one to get in a bit more reliably
 
         // not enough space for this lobby
-        if (cap < lobby.size()) return 0.0;
+        if (cap < lobby.size()) {
+            logger.info("Cap low for {}: ({}-{})/{}", server.getName(), server.getMaxplayers(), server.getPlayers()+1, lobby.size());
+            return 0.0;
+        }
 
+        double weight = (server.getPlayers()-server.getBots()) * 1.0 / server.getMaxplayers();
+        logger.info("Weight for {}: ({}-{})/{} -> {}%", server.getName(), server.getPlayers(), server.getBots(), server.getMaxplayers(), weight);
         // the more human players the better
-        return (server.getPlayers()-server.getBots()) * 1.0 / server.getMaxplayers();
+        return weight;
     }
 
     private static Server findServerForLobby(Lobby lobby) {
