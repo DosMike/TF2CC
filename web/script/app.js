@@ -8,7 +8,8 @@
         session: '',
         members: [],
         regions: [],
-        maps: []
+        maps: [],
+        servercounts: []
     }
     // delayed init
     let sendCmd = (r) => {};
@@ -355,6 +356,7 @@
             state.regions.push(region.value)
             if (canControl() && send) sendCmd("CONFIG + "+region.value)
         }
+        servercount_maps()
         playSound('click')
     }
     const toggleReady = () => {
@@ -381,33 +383,49 @@
         }
     }
 
+    const servercount_maps = () => {
+        // for maps
+        // servercounts.maps is structured map -> [region -> count]
+        //   map value to sum(count for rg,count in value if rg in selection)
+        console.log(state.servercounts.maps)
+        let max = Math.max(...Object.values(state.servercounts.maps)
+            .map(x=>Object.entries(x)).map(x=>x.reduce((accu,[rg,cnt])=>accu+(state.regions.includes(rg)?cnt:0), 0))) || 1
+        Array.from(document.querySelectorAll('.mapchoice input')).forEach(map=>{
+            let name = map.value;
+            let servers = 0;
+            if ((Object.keys(state.servercounts.maps).includes(name))){
+                servers = Object.entries(state.servercounts.maps[name])
+                    .filter(([rg,_])=>state.regions.includes(rg))
+                    .reduce((accu,[_,cnt])=>accu+cnt,servers)
+            }
+            let counter = map.parentElement.querySelector('.servercount')
+            counter.innerText = servers+" Servers"
+            let percent = servers / max
+            let hue = (percent * 120).toFixed(0)
+            percent = (percent * 85 + 15).toFixed(0)+'%'
+            counter.style.backgroundImage = 'linear-gradient(270deg, hsl('+hue+' 60% 33%) 0, hsl('+hue+' 90% 66%) '+percent+', #0000 '+percent+', #0000 100%)'
+        })
+    }
+    const servercount_regions = () => {
+        // for regions
+        let max = Math.max(...Object.values(state.servercounts.regions))
+        Array.from(document.querySelectorAll('.regions input')).forEach(reg=>{
+            let name = reg.value;
+            let servers = (Object.keys(state.servercounts.regions).includes(name)) ? state.servercounts.regions[name] : 0;
+            let counter = reg.parentElement.querySelector('.servercount')
+            counter.innerText = servers+" Servers"
+            let percent = servers / max
+            let hue = (percent * 120).toFixed(0)
+            percent = (percent * 85 + 15).toFixed(0)+'%'
+            counter.style.backgroundImage = 'linear-gradient(270deg, hsl('+hue+' 60% 33%) 0, hsl('+hue+' 90% 66%) '+percent+', #0000 '+percent+', #0000 100%)'
+        })
+    }
     const servercount = () => {
         Request.GET('action.php?do=servercount').then((req)=>{
             let counts = JSON.parse(req.responseText)
-            // for maps
-            let max = Math.max(...Object.values(counts.maps))
-            Array.from(document.querySelectorAll('.mapchoice input')).forEach(map=>{
-                let name = map.value;
-                let servers = (Object.keys(counts.maps).includes(name)) ? counts.maps[name] : 0;
-                let counter = map.parentElement.querySelector('.servercount')
-                counter.innerText = servers+" Servers"
-                let percent = servers / max
-                let hue = (percent * 120).toFixed(0)
-                percent = (percent * 85 + 15).toFixed(0)+'%'
-                counter.style.backgroundImage = 'linear-gradient(270deg, hsl('+hue+' 60% 33%) 0, hsl('+hue+' 90% 66%) '+percent+', #0000 '+percent+', #0000 100%)'
-            })
-            // for regions
-            max = Math.max(...Object.values(counts.regions))
-            Array.from(document.querySelectorAll('.regions input')).forEach(reg=>{
-                let name = reg.value;
-                let servers = (Object.keys(counts.regions).includes(name)) ? counts.regions[name] : 0;
-                let counter = reg.parentElement.querySelector('.servercount')
-                counter.innerText = servers+" Servers"
-                let percent = servers / max
-                let hue = (percent * 120).toFixed(0)
-                percent = (percent * 85 + 15).toFixed(0)+'%'
-                counter.style.backgroundImage = 'linear-gradient(270deg, hsl('+hue+' 60% 33%) 0, hsl('+hue+' 90% 66%) '+percent+', #0000 '+percent+', #0000 100%)'
-            })
+            state.servercounts = counts
+            servercount_maps()
+            servercount_regions()
         })
         window.setTimeout(()=>servercount(), 120000)
     }
