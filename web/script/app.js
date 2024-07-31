@@ -388,14 +388,15 @@
         // servercounts.maps is structured map -> [region -> count]
         //   map value to sum(count for rg,count in value if rg in selection)
         console.log(state.servercounts.maps)
+        const rg_filter = (state.accountid ? (rg)=>state.regions.includes(rg) : (rg)=>true)
         let max = Math.max(...Object.values(state.servercounts.maps)
-            .map(x=>Object.entries(x)).map(x=>x.reduce((accu,[rg,cnt])=>accu+(state.regions.includes(rg)?cnt:0), 0))) || 1
+            .map(x=>Object.entries(x)).map(x=>x.reduce((accu,[rg,cnt])=>accu+(rg_filter(rg)?cnt:0), 0))) || 1
         Array.from(document.querySelectorAll('.mapchoice input')).forEach(map=>{
             let name = map.value;
             let servers = 0;
             if ((Object.keys(state.servercounts.maps).includes(name))){
                 servers = Object.entries(state.servercounts.maps[name])
-                    .filter(([rg,_])=>state.regions.includes(rg))
+                    .filter(([rg,_])=>rg_filter(rg))
                     .reduce((accu,[_,cnt])=>accu+cnt,servers)
             }
             let counter = map.parentElement.querySelector('.servercount')
